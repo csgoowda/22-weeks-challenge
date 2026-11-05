@@ -1,12 +1,9 @@
-Great! We have covered the Day 1 OOP concepts. Next, according to your roadmap, let's move to Aptitude – Percentages and Fractions.
+# Day 1 – Aptitude: Percentages and Fractions
 
-# Day 1 – Aptitude
+**Duration:** 30 minutes  
+**Level:** Beginner
 
-30 minutes
-
-Beginner level
-
-Today's topics:
+## Today's Topics
 
 1. Fraction to percentage
 2. Percentage to fraction
@@ -15,7 +12,9 @@ Today's topics:
 5. Finding X% of a number
 6. Practice 8–10 questions
 
-## 1. What is a percentage?
+---
+
+## 1. What Is a Percentage?
 
 Percentage means a value out of 100.
 
@@ -23,248 +22,363 @@ The symbol is `%`.
 
 For example:
 
-\\[ 50\\% = \frac{50}{100} = 0.5 \\]
+50% = 50/100 = 0.5
 
 If you score 50 marks out of 100, your percentage is 50%.
 
-## 2. Fraction to percentage
+---
 
-Formula:
+## 2. Fraction to Percentage
 
-\\[ \text{Percentage}=\frac{\text{Numerator}}{\text{Denominator}}\times100 \\]
+**Formula:**
 
-Example 1:
+Percentage = (Numerator / Denominator) × 100
 
-\\[ \frac{5}{10}\times100=50\\% \\]
+### Example 1:
 
-Example 2:
+Convert 5/10 into a percentage.
 
-\\[ \frac{5000}{20000}\times100 \\]
+Solution:
 
-Step by step:
+= (5/10) × 100
 
-\\[ =\frac{5000\times100}{20000} \\]
+= 50%
 
-Cancel the zeros:
+**Answer: 50%**
 
-\\[ =\frac{5000}{200}=25\\% \\]
+### Example 2:
 
-Answer: 25%
+Convert 5000/20000 into a percentage.
 
-Example 3:
+Solution:
 
-\\[ \frac{3}{4}\times100=75\\% \\]
+= (5000/20000) × 100
 
-Useful fraction conversions to remember:
+Step 1: Multiply the numerator by 100.
+
+= (5000 × 100) / 20000
+
+Step 2: Cancel the zeros.
+
+= 500000 / 20000
+
+= 25%
+
+**Answer: 25%**
+
+### Example 3:
+
+Convert 3/4 into a percentage.
+
+Solution:
+
+= (3/4) × 100
+
+= 75%
+
+**Answer: 75%**
+
+### Useful Fraction Conversions to Remember
 
 | Fraction | Percentage |
-| -------- | ---------- |
-| 1/2      | 50%        |
-| 1/3      | 33.33%     |
-| 1/4      | 25%        |
-| 1/5      | 20%        |
-| 1/10     | 10%        |
-| 3/4      | 75%        |
+|---|---|
+| 1/2 | 50% |
+| 1/3 | 33.33% |
+| 1/4 | 25% |
+| 1/5 | 20% |
+| 1/10 | 10% |
+| 3/4 | 75% |
 
-## 3. Percentage to fraction
+---
+
+## 3. Percentage to Fraction
 
 Divide the percentage by 100 and simplify.
 
-Example:
+### Example 1:
 
-\\[ 25\\%=\frac{25}{100}=\frac14 \\]
+Convert 25% into a fraction.
 
-Another example:
+Solution:
 
-\\[ 75\\%=\frac{75}{100}=\frac34 \\]
+= 25/100
 
-## 4. Decimal to percentage
+= 1/4
 
-Formula:
+**Answer: 1/4**
 
-\\[ \text{Decimal}\times100 \\]
+### Example 2:
 
-Examples:
+Convert 75% into a fraction.
 
-\\[ 0.5\times100=50\\% \\]
+Solution:
 
-\\[ 0.25\times100=25\\% \\]
+= 75/100
 
-\\[ 0.75\times100=75\\% \\]
+= 3/4
 
-## 5. Percentage to decimal
+**Answer: 3/4**
 
-Divide by 100.
+---
 
-Examples:
+## 4. Decimal to Percentage
 
-\\[ 50\\%\div100=0.5 \\]
+**Formula:**
 
-\\[ 25\\%\div100=0.25 \\]
+Percentage = Decimal × 100
 
-\\[ 7.5\\%\div100=0.075 \\]
+### Examples:
 
-## 6. Find X% of a number
+Example 1:
 
-Formula:
+0.5 × 100 = 50%
 
-\\[ X\\%\text{ of }N=\frac{X}{100}\times N \\]
+Example 2:
 
-Example: Find 20% of 500.
+0.25 × 100 = 25%
 
-\\[ =\frac{20}{100}\times500 \\]
+Example 3:
 
-\\[ =100 \\]
+0.75 × 100 = 75%
 
-Example: Find 15% of 200.
+---
 
-\\[ =\frac{15}{100}\times200=30 \\]
+## 5. Percentage to Decimal
 
-## 7. Quick calculation tricks
+Divide the percentage by 100.
 
-| Percentage | Shortcut                   |
-| ---------- | -------------------------- |
-| 10%        | Divide by 10               |
-| 20%        | Divide by 5                |
-| 25%        | Divide by 4                |
-| 50%        | Divide by 2                |
-| 5%         | Find 10%, then divide by 2 |
-| 1%         | Divide by 100              |
+### Examples:
 
-Example: 25% of 800
+Example 1:
 
-\\[ 800\div4=200 \\]
+50% / 100 = 0.5
 
-Much faster than the long formula!
+Example 2:
 
-## 8. Your practice test
+25% / 100 = 0.25
+
+Example 3:
+
+7.5% / 100 = 0.075
+
+---
+
+## 6. Find X% of a Number
+
+**Formula:**
+
+X% of N = (X / 100) × N
+
+### Example 1: Find 20% of 500.
+
+Solution:
+
+= (20/100) × 500
+
+= 100
+
+**Answer: 100**
+
+### Example 2: Find 15% of 200.
+
+Solution:
+
+= (15/100) × 200
+
+= 30
+
+**Answer: 30**
+
+---
+
+## 7. Quick Calculation Tricks
+
+| Percentage | Shortcut |
+|---|---|
+| 10% | Divide by 10 |
+| 20% | Divide by 5 |
+| 25% | Divide by 4 |
+| 50% | Divide by 2 |
+| 5% | Find 10%, then divide by 2 |
+| 1% | Divide by 100 |
+
+### Example: Find 25% of 800.
+
+Shortcut:
+
+800 / 4 = 200
+
+**Answer: 200**
+
+This is faster than using the long formula.
+
+---
+
+## 8. Day 1 Practice Test
 
 Try these 10 questions without using a calculator.
 
-Day 1 aptitude test
+### Q1. Convert 1/2 into a percentage.
 
-Q1. Convert 1/2 into a percentage.
-
-A. 25%
-
-B. 50%
-
-C. 75%
-
+A. 25%  
+B. 50%  
+C. 75%  
 D. 100%
 
-Correct — 1 ÷ 2 × 100 = 50%.
+**Solution:**
 
-Q2. Convert 3/4 into a percentage.
+1 / 2 × 100 = 50%
 
-A. 25%
+**Correct Answer: B. 50%**
 
-B. 50%
+### Q2. Convert 3/4 into a percentage.
 
-C. 75%
-
+A. 25%  
+B. 50%  
+C. 75%  
 D. 80%
 
-Correct — 3 ÷ 4 × 100 = 75%.
+**Solution:**
 
-Q3. Convert 0.25 into a percentage.
+3 / 4 × 100 = 75%
 
-A. 2.5%
+**Correct Answer: C. 75%**
 
-B. 25%
+### Q3. Convert 0.25 into a percentage.
 
-C. 250%
-
+A. 2.5%  
+B. 25%  
+C. 250%  
 D. 0.25%
 
-Correct — 0.25 × 100 = 25%.
+**Solution:**
 
-Q4. Convert 60% into a decimal.
+0.25 × 100 = 25%
 
-A. 6
+**Correct Answer: B. 25%**
 
-B. 0.06
+### Q4. Convert 60% into a decimal.
 
-C. 0.6
-
+A. 6  
+B. 0.06  
+C. 0.6  
 D. 60
 
-Correct — 60 ÷ 100 = 0.6.
+**Solution:**
 
-Q5. Find 10% of 500.
+60 / 100 = 0.6
 
-A. 5
+**Correct Answer: C. 0.6**
 
-B. 50
+### Q5. Find 10% of 500.
 
-C. 100
-
+A. 5  
+B. 50  
+C. 100  
 D. 250
 
-Correct — 500 ÷ 10 = 50.
+**Solution:**
 
-Q6. Find 25% of 800.
+500 / 10 = 50
 
-A. 100
+**Correct Answer: B. 50**
 
-B. 150
+### Q6. Find 25% of 800.
 
-C. 200
-
+A. 100  
+B. 150  
+C. 200  
 D. 250
 
-Correct — 800 ÷ 4 = 200.
+**Solution:**
 
-Q7. Find 20% of 150.
+800 / 4 = 200
 
-A. 15
+**Correct Answer: C. 200**
 
-B. 20
+### Q7. Find 20% of 150.
 
-C. 30
-
+A. 15  
+B. 20  
+C. 30  
 D. 50
 
-Correct — 150 ÷ 5 = 30.
+**Solution:**
 
-Q8. Convert 5000/20000 into a percentage.
+150 / 5 = 30
 
-A. 20%
+**Correct Answer: C. 30**
 
-B. 25%
+### Q8. Convert 5000/20000 into a percentage.
 
-C. 40%
-
+A. 20%  
+B. 25%  
+C. 40%  
 D. 50%
 
-Correct — 5000 ÷ 20000 × 100 = 25%.
+**Solution:**
 
-Q9. Convert 75% into a fraction in simplest form.
+(5000 / 20000) × 100 = 25%
 
-A. 1/2
+**Correct Answer: B. 25%**
 
-B. 1/4
+### Q9. Convert 75% into a fraction in simplest form.
 
-C. 3/4
-
+A. 1/2  
+B. 1/4  
+C. 3/4  
 D. 4/5
 
-Correct — 75/100 simplifies to 3/4.
+**Solution:**
 
-Q10. Find 5% of 600.
+75/100 = 3/4
 
-A. 15
+**Correct Answer: C. 3/4**
 
-B. 20
+### Q10. Find 5% of 600.
 
-C. 30
-
+A. 15  
+B. 20  
+C. 30  
 D. 60
 
-Correct — 10% is 60; half of it is 30.
+**Solution:**
 
-# 10/10 correct
+10% of 600 = 60
 
-Retake test
+5% is half of 10%.
 
-After this, we'll practise your two-minute English introduction and complete the remaining Day 1 review. Remember, Day 1 is not officially complete until all its checklist items are verified.
+60 / 2 = 30
+
+**Correct Answer: C. 30**
+
+---
+
+## 9. Practice Test Result
+
+**Total Questions:** 10  
+**Correct Answers:** 10  
+**Score:** 10/10
+
+**Result: 100%**
+
+---
+
+## 10. Day 1 Revision Checklist
+
+- [x] Understand the meaning of percentage.
+- [x] Convert fractions into percentages.
+- [x] Convert percentages into fractions.
+- [x] Convert decimals into percentages.
+- [x] Convert percentages into decimals.
+- [x] Calculate X% of a number.
+- [x] Learn quick calculation tricks.
+- [x] Complete 10 practice questions.
+
+**Topic:** Percentages and Fractions  
+**Practice Questions:** 10  
+**Practice Score:** 10/10
+
+**Status: Aptitude practice completed.**
+
+**Next:** Practise your two-minute English introduction and complete the remaining Day 1 review.
