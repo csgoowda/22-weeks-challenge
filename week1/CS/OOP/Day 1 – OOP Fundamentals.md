@@ -221,8 +221,4 @@ D. Comments
 
 
 
-0/5 answered
 
-Submit answers
-
-One important thing: We still have the DSA quiz pending. We can return to it after this OOP lesson. Once your practical and quiz are verified, we'll move to aptitude and English.
