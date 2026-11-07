@@ -312,4 +312,4 @@ WAN stands for Wide Area Network. It connects networks across large geographical
 - [ ] Prepare 2–3 interview questions.
 - [ ] Explain network basics aloud in 60 seconds.
 
-**Day 3 CS Goal:** Understand the basic components of a computer network and explain how hosts, packets, routers and switches work together.
+
