@@ -1,6 +1,10 @@
 Day 4 – DSA Notes
 
-Topics: Reverse Integer, Numeric Palindrome and Array Sum
+Topics
+
+1. Reverse Integer
+2. Numeric Palindrome
+3. Array Sum
 
 ---
 
@@ -10,8 +14,6 @@ Problem
 
 Given an integer, reverse its digits.
 
-Examples:
-
 Input| Output
 123| 321
 456| 654
@@ -19,38 +21,34 @@ Input| Output
 120| 21
 100| 1
 
-Important operators
+Important Operators
 
 Modulus "%"
 
-Returns the remainder. Using "% 10" extracts the last digit.
+Returns the remainder. "% 10" extracts the last digit.
 
 n = 1234
-
 digit = n % 10
-
 print(digit)  # 4
 
-Floor division "//"
+Floor Division "//"
 
-Divides and removes the decimal part. Using "// 10" removes the last digit.
+Removes the last digit when dividing an integer by 10.
 
 n = 1234
-
 n = n // 10
-
 print(n)  # 123
 
 Algorithm
 
 1. Take an integer.
-2. Create a variable "reverse = 0".
+2. Initialise "reverse = 0".
 3. Extract the last digit using "% 10".
 4. Add the digit to the reversed number.
 5. Remove the last digit using "// 10".
 6. Repeat until the number becomes zero.
 
-Python code
+Python Code
 
 n = int(input("Enter a number: "))
 
@@ -63,7 +61,7 @@ while n > 0:
 
 print("Reversed number:", reverse)
 
-Example dry run
+Dry Run
 
 Input: "123"
 
@@ -73,11 +71,9 @@ Initial| -| 0| 123
 2| 2| 32| 1
 3| 1| 321| 0
 
-Output:
+Output: "321"
 
-321
-
-Understanding the main formula
+Important Formula
 
 reverse = reverse * 10 + digit
 
@@ -89,7 +85,7 @@ digit = 1
 reverse = 32 * 10 + 1
 reverse = 321
 
-Handling negative numbers
+Handling Negative Numbers
 
 n = int(input("Enter number: "))
 
@@ -109,8 +105,8 @@ Example: "-123" gives "-321".
 
 Complexity
 
-- Time complexity: O(d), where d is the number of digits.
-- Auxiliary space complexity: O(1).
+- Time Complexity: O(d), where d is the number of digits.
+- Auxiliary Space Complexity: O(1).
 
 ---
 
@@ -120,25 +116,23 @@ Problem
 
 A number is a palindrome if it remains the same when its digits are reversed.
 
-Examples:
-
 Number| Reversed| Result
 121| 121| Palindrome
-123| 321| Not palindrome
+123| 321| Not Palindrome
 1331| 1331| Palindrome
 454| 454| Palindrome
-120| 21| Not palindrome
+120| 21| Not Palindrome
 0| 0| Palindrome
 
-Logic
+Algorithm
 
 1. Take a number.
 2. Store the original number in another variable.
-3. Reverse the number using the reverse integer logic.
-4. Compare the original number and reversed number.
+3. Reverse the number using reverse integer logic.
+4. Compare the original and reversed numbers.
 5. If both are equal, it is a palindrome.
 
-Python code
+Python Code
 
 n = int(input("Enter a number: "))
 
@@ -155,7 +149,7 @@ if original == reverse:
 else:
     print("Not a palindrome")
 
-Example dry run
+Dry Run
 
 Input: "121"
 
@@ -171,26 +165,24 @@ original == reverse
 
 121 == 121
 
-Output:
+Output: "Palindrome"
 
-Palindrome
+Important Edge Cases
 
-Important edge cases
-
-Input| Expected result
+Input| Expected Result
 0| Palindrome
 7| Palindrome
 11| Palindrome
-10| Not palindrome
-123| Not palindrome
--121| Not palindrome
+10| Not Palindrome
+123| Not Palindrome
+-121| Not Palindrome
 
 For this exercise, negative numbers are treated as not palindrome.
 
 Complexity
 
-- Time complexity: O(d), where d is the number of digits.
-- Auxiliary space complexity: O(1).
+- Time Complexity: O(d), where d is the number of digits.
+- Auxiliary Space Complexity: O(1).
 
 ---
 
@@ -208,15 +200,15 @@ Expected output:
 
 Total sum: 150
 
-Logic
+Algorithm
 
 1. Create a list of numbers.
-2. Create a variable "total = 0".
+2. Initialise "total = 0".
 3. Visit each element using a loop.
 4. Add each element to "total".
 5. Print the final sum.
 
-Python code
+Python Code
 
 numbers = [10, 20, 30, 40, 50]
 
@@ -227,21 +219,17 @@ for num in numbers:
 
 print("Total sum:", total)
 
-Output:
+Output: "150"
 
-Total sum: 150
-
-Understanding the main formula
+Important Formula
 
 total = total + num
-
-This adds the current element to the previous total.
 
 Short form:
 
 total += num
 
-Dry run
+Dry Run
 
 Input:
 
@@ -255,11 +243,9 @@ Initial| -| 0
 4| 40| 100
 5| 50| 150
 
-Final output:
+Final output: "150"
 
-150
-
-Using a function
+Using a Function
 
 def array_sum(numbers):
     total = 0
@@ -276,19 +262,17 @@ result = array_sum(values)
 
 print("Total sum:", result)
 
-Using Python's built-in sum()
+Using Python's Built-in sum()
 
 numbers = [10, 20, 30, 40, 50]
 
 print(sum(numbers))
 
-Output:
-
-150
+Output: "150"
 
 For DSA practice, understand the loop-based solution first.
 
-Edge cases
+Edge Cases
 
 Input| Output
 [1, 2, 3]| 6
@@ -299,28 +283,24 @@ Input| Output
 
 Complexity
 
-For the loop-based solution:
-
-- Time complexity: O(n), because every element is visited once.
-- Auxiliary space complexity: O(1), because only one extra variable is used.
+- Time Complexity: O(n), because every element is visited once.
+- Auxiliary Space Complexity: O(1), because only one extra variable is used.
 
 ---
 
 4. Important DSA Concepts
 
-What is an algorithm?
+What is an Algorithm?
 
 An algorithm is a step-by-step procedure to solve a problem.
 
-What is dry run?
+What is Dry Run?
 
 Dry run means manually tracing a program with sample input to understand how variables change.
 
-What is time complexity?
+What is Time Complexity?
 
-Time complexity describes how the running time of an algorithm grows as the input size increases.
-
-Examples:
+Time complexity describes how the running time of an algorithm grows as input size increases.
 
 Complexity| Meaning
 O(1)| Constant time
@@ -328,11 +308,11 @@ O(n)| Linear time
 O(log n)| Logarithmic time
 O(n²)| Quadratic time
 
-What is space complexity?
+What is Space Complexity?
 
 Space complexity describes how much additional memory an algorithm needs as input size grows.
 
-Auxiliary space
+What is Auxiliary Space?
 
 Auxiliary space means the extra memory used by an algorithm, excluding the input itself.
 
@@ -350,7 +330,7 @@ It returns the remainder after division.
 
 3. What does "//" do in Python?
 
-It performs floor division and removes the fractional part.
+It performs floor division.
 
 4. How do you reverse an integer?
 
@@ -386,23 +366,24 @@ Manually executing a program step by step with sample input.
 
 - [ ] Understand "% 10".
 - [ ] Understand "// 10".
-- [ ] Write reverse integer without looking at notes.
-- [ ] Dry-run reverse integer.
-- [ ] Write numeric palindrome without looking at notes.
+- [ ] Write Reverse Integer without looking at notes.
+- [ ] Dry-run Reverse Integer.
+- [ ] Write Numeric Palindrome without looking at notes.
 - [ ] Test palindrome edge cases.
-- [ ] Write array sum using a loop.
+- [ ] Write Array Sum using a loop.
 - [ ] Test empty and negative-number lists.
 - [ ] Explain time complexity.
 - [ ] Explain auxiliary space complexity.
-- [ ] Solve the three problems independently.
-- [ ] Save the code in your GitHub repository.
+- [ ] Solve all three problems independently.
+- [ ] Save the code in the GitHub repository.
 
 Today's DSA Deliverable
 
-Three programs:
+Create these three Python files:
 
-1. "reverse_integer.py"
-2. "numeric_palindrome.py"
-3. "array_sum.py"
+day-04/
+├── reverse_integer.py
+├── numeric_palindrome.py
+└── array_sum.py
 
-Remember: Don't memorise only the code. Understand the logic, dry-run the variables, test edge cases and explain the complexity.
+Remember: Don't just memorise the code. Understand the logic, dry-run the variables, test edge cases and explain the complexity.
