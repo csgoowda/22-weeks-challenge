@@ -5,10 +5,7 @@ def group_by_length(words):
     for word in words:
         length = len(word)
 
-        if length in groups:
-            groups[length].append(word)
-        else:
-            groups[length] = [word]
+         groups.setdefault(length, []).append(word)
 
     return groups
 
