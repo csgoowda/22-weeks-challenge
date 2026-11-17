@@ -2,244 +2,204 @@
 
 **Subject:** Computer Science Fundamentals  
 **Topic:** Object-Oriented Programming  
-**Level:** Beginner to Interview Preparation  
-**Language:** Python
+**Language:** Python  
+**Study Duration:** 25 Minutes + Practice
 
 ---
 
 # PART 1: INTERVIEW PREPARATION
 
-## 1. What is Object-Oriented Programming (OOP)?
+## 1. Expected Interview Questions and Answers
 
-**Interview Answer:**
+### Q1. What is Object-Oriented Programming (OOP)?
 
-Object-Oriented Programming (OOP) is a programming paradigm based on classes and objects. It combines data and the methods that operate on that data into objects.
+**Answer:**
 
-OOP helps developers write reusable, organized, maintainable and scalable code.
+Object-Oriented Programming (OOP) is a programming approach based on classes and objects. It helps organize code into reusable and manageable components.
 
-**Example:** In a banking application, we can create a `BankAccount` class containing account details and methods such as deposit, withdraw and check balance.
+OOP improves code reusability, maintainability, modularity and security.
 
-**Important points:**
-- OOP organizes programs using classes and objects.
-- It supports code reusability.
-- It improves code organization.
-- It makes large applications easier to maintain.
-- It has four main pillars.
+### Q2. What are the four pillars of OOP?
 
-## 2. What are the four pillars of OOP?
-
-**Interview Answer:**
+**Answer:**
 
 The four pillars of OOP are:
 
 1. Encapsulation – Combining data and methods inside a class and controlling access to data.
-2. Abstraction – Hiding implementation details and exposing essential functionality.
-3. Inheritance – Allowing one class to reuse properties and methods from another class.
-4. Polymorphism – Allowing the same interface or method name to have different behaviours.
+2. Abstraction – Hiding implementation details and showing essential functionality.
+3. Inheritance – Reusing properties and methods from an existing class.
+4. Polymorphism – Allowing the same interface or method to have different behaviours.
 
-| Pillar | Simple meaning | Example |
-|---|---|---|
-| Encapsulation | Control access to data | Bank account |
-| Abstraction | Hide complexity | Driving a car |
-| Inheritance | Reuse code | Car inherits Vehicle |
-| Polymorphism | Different behaviours | Dog and Cat sounds |
+### Q3. What is the difference between a class and an object?
 
-## 3. What is a class?
+**Answer:**
 
-**Interview Answer:**
+A class is a blueprint used to create objects, whereas an object is an instance of a class.
 
-A class is a blueprint or template used to create objects. It defines the attributes and methods that its objects can have.
+For example, `Car` is a class, while a BMW car or Toyota car created from that class is an object.
 
-**Example:**
+### Q4. What is a constructor in Python?
 
-```python
-class Student:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-```
+**Answer:**
 
-Here, `Student` is a class.
+A constructor is used to initialize an object's data when it is created. In Python, `__init__()` is commonly used as the initializer method.
 
-## 4. What is an object?
-
-**Interview Answer:**
-
-An object is an instance of a class. It represents an individual entity with its own data and access to the methods defined by its class.
-
-**Example:**
+Example:
 
 ```python
 class Student:
     def __init__(self, name):
         self.name = name
-
-
-student1 = Student("Chethan")
-student2 = Student("Rahul")
 ```
 
-Here, `student1` and `student2` are two different objects of the `Student` class.
+### Q5. What is `self` in Python?
 
-## 5. What is the difference between a class and an object?
-
-| Class | Object |
-|---|---|
-| Blueprint or template | Instance of a class |
-| Defines attributes and methods | Uses attributes and methods |
-| Defines the structure | Represents an individual entity |
-| Example: Student | Example: student1 |
-
-## 6. What is a constructor in Python?
-
-**Interview Answer:**
-
-A constructor is commonly used to initialize an object's data when it is created. In Python, the `__init__()` method is used as the initializer. It is automatically called when an object is instantiated.
-
-**Example:**
-
-```python
-class Student:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-
-student = Student("Chethan", 22)
-
-print(student.name)
-print(student.age)
-```
-
-**Output:**
-
-```text
-Chethan
-22
-```
-
-## 7. What is self in Python?
-
-**Interview Answer:**
+**Answer:**
 
 `self` refers to the current object of a class. It is used to access the attributes and methods belonging to that object.
 
-**Example:**
+### Q6. What is encapsulation?
+
+**Answer:**
+
+Encapsulation is the concept of combining data and the methods that operate on that data inside a class while controlling access to it.
+
+For example, a bank account allows users to deposit and withdraw money through methods instead of directly changing the balance.
+
+### Q7. What is abstraction?
+
+**Answer:**
+
+Abstraction means hiding internal implementation details and exposing only the essential functionality.
+
+For example, when driving a car, we use the steering wheel and accelerator without needing to understand the complete internal engine mechanism.
+
+### Q8. What is inheritance?
+
+**Answer:**
+
+Inheritance allows one class to acquire the attributes and methods of another class.
+
+The existing class is called the parent class, and the class that inherits from it is called the child class.
+
+It promotes code reusability.
+
+### Q9. What is polymorphism?
+
+**Answer:**
+
+Polymorphism means one interface can have different behaviours depending on the object.
+
+For example, a `sound()` method can produce different outputs for Dog and Cat objects.
+
+### Q10. What is method overriding?
+
+**Answer:**
+
+Method overriding occurs when a child class provides its own implementation of a method already defined in its parent class.
+
+It is commonly used to achieve runtime polymorphism in Python.
+
+### Q11. What is the difference between abstraction and encapsulation?
+
+**Answer:**
+
+Abstraction hides implementation details and shows only necessary functionality.
+
+Encapsulation combines data and methods inside a class and controls how the data is accessed or modified.
+
+### Q12. What are the different types of inheritance in Python?
+
+**Answer:**
+
+Python supports five commonly discussed types of inheritance:
+
+1. Single inheritance
+2. Multiple inheritance
+3. Multilevel inheritance
+4. Hierarchical inheritance
+5. Hybrid inheritance
+
+### Q13. What is the difference between an instance method, class method and static method?
+
+**Answer:**
+
+- Instance method works with an individual object's data and takes `self`.
+- Class method works with class-level data and takes `cls`. It uses `@classmethod`.
+- Static method does not automatically receive `self` or `cls`. It uses `@staticmethod`.
+
+### Q14. Can we create objects without using a constructor?
+
+**Answer:**
+
+Yes. In Python, we can create objects without defining our own `__init__()` method. Python provides a default initializer when one is not defined.
+
+Example:
 
 ```python
-class Student:
-    def __init__(self, name):
-        self.name = name
-
-    def display(self):
-        print(self.name)
-
-
-student = Student("Chethan")
-student.display()
-```
-
-**Output:**
-
-```text
-Chethan
-```
-
-**Important:** `self` is not a Python keyword. It is the conventional name for the first parameter of an instance method.
-
-## 8. Explain Encapsulation with an example.
-
-**Interview Answer:**
-
-Encapsulation is the process of combining data and the methods that operate on that data within a class while controlling access to the data.
-
-It helps protect data from unintended modification.
-
-**Example:**
-
-```python
-class BankAccount:
-    def __init__(self, balance):
-        self.__balance = balance
-
-    def deposit(self, amount):
-        if amount > 0:
-            self.__balance += amount
-
-    def get_balance(self):
-        return self.__balance
-
-
-account = BankAccount(1000)
-
-account.deposit(500)
-
-print(account.get_balance())
-```
-
-**Output:**
-
-```text
-1500
-```
-
-**Explanation:**
-- `__balance` uses double-underscore name mangling.
-- `deposit()` modifies the balance.
-- `get_balance()` returns the balance.
-- The class controls how its balance is accessed and changed.
-
-## 9. Explain Abstraction with an example.
-
-**Interview Answer:**
-
-Abstraction means hiding internal implementation details and showing only the essential functionality to the user.
-
-For example, when driving a car, we use the steering wheel, accelerator and brakes without needing to understand the internal working of the engine.
-
-**Python Example:**
-
-```python
-from abc import ABC, abstractmethod
-
-
-class Vehicle(ABC):
-
-    @abstractmethod
-    def start(self):
-        pass
-
-
-class Car(Vehicle):
-
+class Car:
     def start(self):
         print("Car is starting")
 
 
-car = Car()
-car.start()
+car1 = Car()
+car1.start()
 ```
 
-**Output:**
+### Q15. Why is OOP useful in real-world applications?
 
-```text
-Car is starting
+**Answer:**
+
+OOP helps organize large applications into smaller components. It supports code reuse, makes maintenance easier and allows developers to represent real-world entities using classes and objects.
+
+### Q16. How can you use OOP in your OptimalTaskPlanner project?
+
+**Answer:**
+
+I can organize the application using classes such as:
+
+- Machine – Stores machine information and availability.
+- Task – Stores task details, processing time and priority.
+- Schedule – Manages task assignments and scheduling information.
+
+This structure makes the application modular, reusable and easier to maintain.
+
+---
+
+## 2. Important Follow-up Interview Questions
+
+| Question | Short Answer |
+|---|---|
+| Is `self` a keyword? | No, it is a conventional parameter name. |
+| Is Python an OOP language? | Yes, Python supports OOP and other programming styles. |
+| Can a class have multiple objects? | Yes. |
+| Can a child class override a parent method? | Yes. |
+| Does Python support multiple inheritance? | Yes. |
+| What does `super()` do? | It provides access to methods in the parent class according to Python's method resolution order. |
+| What is an attribute? | A variable associated with a class or object. |
+| What is a method? | A function defined inside a class. |
+| What is an instance? | An object created from a class. |
+| What is name mangling? | Python transforms names beginning with double underscores inside a class to reduce accidental name clashes. |
+
+## 3. Interview Coding Questions
+
+### Program 1: Create a Class and Object
+
+```python
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def display(self):
+        print(self.name, self.age)
+
+
+student1 = Student("Chethan", 22)
+student1.display()
 ```
 
-**Explanation:**
-- `ABC` creates an abstract base class.
-- `@abstractmethod` declares an abstract method.
-- The child class implements the required method.
-
-## 10. Explain Inheritance with an example.
-
-**Interview Answer:**
-
-Inheritance is an OOP feature that allows a child class to acquire attributes and methods from a parent class.
-
-It promotes code reusability and reduces duplication.
-
-**Python Example:**
+### Program 2: Demonstrate Inheritance
 
 ```python
 class Vehicle:
@@ -253,44 +213,11 @@ class Car(Vehicle):
 
 
 car = Car()
-
 car.start()
 car.drive()
 ```
 
-**Output:**
-
-```text
-Vehicle is starting
-Car is driving
-```
-
-Here:
-- `Vehicle` is the parent class.
-- `Car` is the child class.
-- `Car` inherits the `start()` method.
-
-## 11. What are the types of inheritance?
-
-**Interview Answer:**
-
-Python supports five commonly discussed types of inheritance:
-
-1. Single inheritance – One child class inherits from one parent class.
-2. Multiple inheritance – One child class inherits from multiple parent classes.
-3. Multilevel inheritance – A class inherits from a class that already inherits from another class.
-4. Hierarchical inheritance – Multiple child classes inherit from one parent class.
-5. Hybrid inheritance – A combination of multiple inheritance structures.
-
-## 12. Explain Polymorphism with an example.
-
-**Interview Answer:**
-
-Polymorphism means many forms. It allows the same interface or method name to behave differently depending on the object.
-
-In Python, method overriding is a common way to achieve polymorphism.
-
-**Python Example:**
+### Program 3: Demonstrate Polymorphism
 
 ```python
 class Animal:
@@ -315,216 +242,61 @@ dog.sound()
 cat.sound()
 ```
 
-**Output:**
-
-```text
-Dog barks
-Cat meows
-```
-
-Both classes have the same method name but provide different implementations.
-
-## 13. What is method overriding?
-
-**Interview Answer:**
-
-Method overriding occurs when a child class provides its own implementation of a method already defined in its parent class.
-
-It allows a child class to customize inherited behaviour.
-
-## 14. What is the difference between method overloading and method overriding?
-
-| Method Overloading | Method Overriding |
-|---|---|
-| Same method name with different parameter combinations | Child class redefines a parent method |
-| Common in languages such as Java and C++ | Supported in Python |
-| Python does not support traditional signature-based overloading directly | Python supports method overriding |
-| Can be simulated using default arguments or `*args` | Achieved through inheritance |
-
-## 15. What are the different types of methods in Python?
-
-**Interview Answer:**
-
-Python classes commonly have three types of methods:
-
-1. Instance methods – Work with individual object data using `self`.
-2. Class methods – Work with class-level data using `cls`.
-3. Static methods – Utility methods that do not automatically receive `self` or `cls`.
-
-**Example:**
+### Program 4: Demonstrate Encapsulation
 
 ```python
-class Student:
-    college = "SJCE Mysore"
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance
 
-    def __init__(self, name):
-        self.name = name
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
 
-    # Instance method
-    def display(self):
-        print(self.name)
-
-    # Class method
-    @classmethod
-    def show_college(cls):
-        print(cls.college)
-
-    # Static method
-    @staticmethod
-    def welcome():
-        print("Welcome to Python OOP")
+    def get_balance(self):
+        return self.__balance
 
 
-student = Student("Chethan")
+account = BankAccount(1000)
+account.deposit(500)
 
-student.display()
-Student.show_college()
-Student.welcome()
+print(account.get_balance())
 ```
 
-**Output:**
-
-```text
-Chethan
-SJCE Mysore
-Welcome to Python OOP
-```
-
-## 16. What is the difference between an instance method, class method and static method?
-
-| Feature | Instance Method | Class Method | Static Method |
-|---|---|---|---|
-| Decorator | Not required | `@classmethod` | `@staticmethod` |
-| First parameter | `self` | `cls` | No automatic first parameter |
-| Access object data | Yes | Through class or object reference | Only if passed explicitly |
-| Access class data | Yes | Yes | Only if passed explicitly |
-| Main purpose | Object operations | Class-level operations | Utility operations |
-
-## 17. What is the difference between abstraction and encapsulation?
-
-**Interview Answer:**
-
-Abstraction focuses on hiding implementation details and showing essential functionality.
-
-Encapsulation focuses on combining data and methods within a class and controlling access to that data.
-
-**Example:**
-- Abstraction: Using a car's steering wheel without understanding the engine.
-- Encapsulation: Controlling access to a bank account balance.
-
-## 18. Why is OOP important in real-world projects?
-
-**Interview Answer:**
-
-OOP is important because it helps developers divide large applications into manageable components.
-
-It improves code reusability, maintainability, organization and scalability.
-
-For example, in a production scheduling application, we can create separate classes for machines, tasks and schedules.
-
-## 19. How can OOP be used in your OptimalTaskPlanner project?
-
-**Interview Answer:**
-
-In OptimalTaskPlanner, OOP can represent real-world manufacturing entities.
-
-- `Machine` class stores machine information and availability.
-- `Task` class stores task details, processing time and priority.
-- `Schedule` class manages task assignments and scheduling operations.
-
-This structure makes the application easier to maintain, extend and test.
-
-## 20. Does Python support multiple inheritance?
-
-**Interview Answer:**
-
-Yes. Python supports multiple inheritance, which means a child class can inherit from more than one parent class.
-
-**Example:**
+### Program 5: Demonstrate Abstraction
 
 ```python
-class Father:
-    def skills(self):
-        print("Gardening")
+from abc import ABC, abstractmethod
 
 
-class Mother:
-    def talent(self):
-        print("Cooking")
+class Vehicle(ABC):
+
+    @abstractmethod
+    def start(self):
+        pass
 
 
-class Child(Father, Mother):
-    pass
+class Car(Vehicle):
+
+    def start(self):
+        print("Car is starting")
 
 
-child = Child()
-
-child.skills()
-child.talent()
+car = Car()
+car.start()
 ```
-
-**Output:**
-
-```text
-Gardening
-Cooking
-```
-
-## 21. What is the difference between public, protected and private members in Python?
-
-**Interview Answer:**
-
-Python uses naming conventions and name mangling to indicate access levels.
-
-| Type | Naming | Meaning |
-|---|---|---|
-| Public | `name` | Intended for general access |
-| Protected | `_name` | Conventionally intended for internal or subclass use |
-| Private | `__name` | Triggers name mangling to reduce accidental access |
-
-Python does not enforce strict private or protected access in the same way as some other languages.
-
-## 22. Expected Interview Follow-up Questions
-
-1. Can we create multiple objects from one class?
-   - Yes, one class can create many independent objects.
-
-2. Can a child class have its own methods?
-   - Yes, a child class can define additional methods.
-
-3. Can a child class override a parent method?
-   - Yes, it can provide its own implementation.
-
-4. Is `self` mandatory as a name?
-   - No, but it is the standard Python convention for the first parameter of an instance method.
-
-5. Is `__init__()` mandatory in every class?
-   - No, Python can use a default initializer when a class does not define its own.
-
-6. Can an abstract class contain normal methods?
-   - Yes, it can contain both abstract and concrete methods.
-
-7. Can we create an object of an abstract class containing an unimplemented abstract method?
-   - No, Python prevents instantiation until the required abstract methods are implemented.
-
-8. What is code reusability?
-   - Using existing code in different parts of an application instead of rewriting it.
-
-9. What is the purpose of `super()`?
-   - It provides a way to access methods from the next class in the method resolution order, commonly used to call parent-class methods.
-
-10. What is the difference between an attribute and a method?
-    - An attribute stores data; a method defines behaviour.
 
 ---
 
-# PART 2: NORMAL DETAILED NOTES
+# PART 2: DETAILED OOP NOTES
 
-## 1. Introduction to OOP
+## 4. Introduction to OOP
 
-Object-Oriented Programming (OOP) is a programming approach in which programs are organized using classes and objects.
+OOP stands for Object-Oriented Programming.
 
-Every object can contain:
+It is a programming paradigm in which programs are organized using classes and objects.
+
+An object contains:
 
 - Attributes – Data or properties.
 - Methods – Functions or behaviours.
@@ -532,34 +304,39 @@ Every object can contain:
 ### Real-world example: Car
 
 A car has attributes:
+
 - Brand
-- Model
 - Colour
+- Model
 - Speed
 
 A car has methods:
+
 - Start
 - Stop
 - Accelerate
 - Brake
 
-OOP allows us to represent these real-world entities in a program.
+We can represent these properties and behaviours using a class.
 
 ### Advantages of OOP
 
-1. Reusability – Reuse existing code.
-2. Maintainability – Easier to modify and update.
-3. Modularity – Divide large programs into smaller components.
-4. Security – Control access to data.
-5. Scalability – Organize applications as they grow.
+1. Code reusability.
+2. Easy maintenance.
+3. Better organization.
+4. Modularity.
+5. Data protection through controlled access.
+6. Easier expansion of large applications.
 
 ---
 
-## 2. Classes and Objects
+## 5. Class and Object
 
-### Class
+### 5.1 Class
 
-A class is a blueprint used to create objects.
+A class is a blueprint or template used to create objects.
+
+Example:
 
 ```python
 class Car:
@@ -567,9 +344,13 @@ class Car:
     color = "Black"
 ```
 
-### Object
+Here, `Car` is the class.
+
+### 5.2 Object
 
 An object is an instance of a class.
+
+Example:
 
 ```python
 class Car:
@@ -583,14 +364,22 @@ print(car1.brand)
 print(car1.color)
 ```
 
-**Output:**
+Output:
 
 ```text
 BMW
 Black
 ```
 
-### Multiple objects
+Here:
+
+- `Car` is the class.
+- `car1` is the object.
+- `brand` and `color` are attributes.
+
+### 5.3 Multiple Objects
+
+We can create multiple objects from one class.
 
 ```python
 class Car:
@@ -609,22 +398,24 @@ car1.start()
 car2.start()
 ```
 
-**Output:**
+Output:
 
 ```text
 BMW is starting
 Toyota is starting
 ```
 
-Each object can have its own attribute values.
+Each object stores its own data.
 
 ---
 
-## 3. Constructor – `__init__()`
+## 6. Constructor – `__init__()`
 
-`__init__()` is a special initializer method used to set up an object's initial attributes.
+A constructor or initializer is used to initialize object attributes when an object is created.
 
-It is automatically called when an object is created.
+Python commonly uses the `__init__()` method for this purpose.
+
+Example:
 
 ```python
 class Student:
@@ -639,25 +430,33 @@ print(student1.name)
 print(student1.age)
 ```
 
-**Output:**
+Output:
 
 ```text
 Chethan
 22
 ```
 
-### Important points
+Explanation:
 
-- `__init__()` initializes object attributes.
-- It is called during object creation.
-- It can accept parameters.
-- It commonly uses `self` to assign instance attributes.
+- `__init__()` is called during object initialization.
+- `self` refers to the current object.
+- `self.name` stores the student's name.
+- `self.age` stores the student's age.
+
+### Important point
+
+Python does not require you to define your own `__init__()` method. A class can create objects without explicitly defining one.
 
 ---
 
-## 4. Understanding self
+## 7. Understanding `self`
 
 `self` refers to the current object.
+
+It allows an instance method to access the attributes and other methods of that object.
+
+Example:
 
 ```python
 class Student:
@@ -665,7 +464,7 @@ class Student:
         self.name = name
 
     def display(self):
-        print("Student:", self.name)
+        print("Student name:", self.name)
 
 
 student1 = Student("Chethan")
@@ -675,22 +474,28 @@ student1.display()
 student2.display()
 ```
 
-**Output:**
+Output:
 
 ```text
-Student: Chethan
-Student: Rahul
+Student name: Chethan
+Student name: Rahul
 ```
 
-The `self.name` attribute belongs to the individual object.
+Important points:
+
+- `self` is not a Python keyword.
+- It is the conventional name for the first parameter of an instance method.
+- Python automatically supplies the current object when an instance method is called.
 
 ---
 
-## 5. Attributes and Methods
+## 8. Attributes and Methods
 
-### Attributes
+### 8.1 Attributes
 
-Attributes are variables associated with a class or object.
+Attributes are variables that store information about a class or object.
+
+Example:
 
 ```python
 class Mobile:
@@ -699,9 +504,13 @@ class Mobile:
         self.price = price
 ```
 
-### Methods
+Here, `brand` and `price` are instance attributes.
+
+### 8.2 Methods
 
 Methods are functions defined inside a class.
+
+Example:
 
 ```python
 class Mobile:
@@ -716,7 +525,7 @@ phone = Mobile("Samsung")
 phone.call()
 ```
 
-**Output:**
+Output:
 
 ```text
 Samsung is calling
@@ -724,13 +533,26 @@ Samsung is calling
 
 ---
 
-## 6. Four Pillars of OOP
+# 9. Four Pillars of OOP
 
-### 6.1 Encapsulation
+The four pillars of OOP are:
 
-Encapsulation means combining data and methods inside a class and controlling access to the data.
+1. Encapsulation
+2. Abstraction
+3. Inheritance
+4. Polymorphism
 
-**Real-world example:** Bank account.
+## 9.1 Encapsulation
+
+**Definition:** Encapsulation means combining data and the methods that operate on that data inside a class, while controlling access to the data.
+
+### Real-world example
+
+Consider a bank account.
+
+Users perform operations such as depositing and withdrawing money rather than directly changing the account balance through the banking interface.
+
+### Python example
 
 ```python
 class BankAccount:
@@ -741,12 +563,6 @@ class BankAccount:
         if amount > 0:
             self.__balance += amount
 
-    def withdraw(self, amount):
-        if 0 < amount <= self.__balance:
-            self.__balance -= amount
-        else:
-            print("Invalid withdrawal")
-
     def get_balance(self):
         return self.__balance
 
@@ -754,28 +570,46 @@ class BankAccount:
 account = BankAccount(1000)
 
 account.deposit(500)
-account.withdraw(200)
 
 print(account.get_balance())
 ```
 
-**Output:**
+Output:
 
 ```text
-1300
+1500
 ```
 
-**Important concepts:**
-- Encapsulation combines data and methods.
-- It helps control access to internal data.
-- Double underscore triggers name mangling.
-- Access should be provided through suitable methods or properties.
+Explanation:
 
-### 6.2 Abstraction
+- `__balance` uses a double underscore.
+- `deposit()` changes the balance through a method.
+- `get_balance()` provides controlled access to the balance.
 
-Abstraction means hiding unnecessary implementation details and showing essential functionality.
+### Important points
 
-**Real-world example:** Driving a car without understanding all the internal engine operations.
+- Combines data and methods.
+- Helps control access to data.
+- Supports better data organization.
+- Python uses naming conventions and name mangling rather than strict private access control.
+
+---
+
+## 9.2 Abstraction
+
+**Definition:** Abstraction means hiding unnecessary implementation details and showing only essential functionality.
+
+### Real-world example
+
+When driving a car:
+
+- You use the steering wheel.
+- You press the accelerator.
+- You apply the brakes.
+
+You do not need to understand every internal engine operation to drive the car.
+
+### Python example
 
 ```python
 from abc import ABC, abstractmethod
@@ -798,23 +632,41 @@ car = Car()
 car.start()
 ```
 
-**Output:**
+Output:
 
 ```text
 Car is starting
 ```
 
-**Important concepts:**
-- `ABC` is an abstract base class.
-- `@abstractmethod` declares an abstract method.
-- Child classes implement required abstract methods.
-- An abstract class with unimplemented abstract methods cannot be instantiated.
+Explanation:
 
-### 6.3 Inheritance
+- `ABC` creates an abstract base class.
+- `@abstractmethod` declares a method that concrete subclasses must implement.
+- `Car` implements the `start()` method.
 
-Inheritance allows one class to reuse the attributes and methods of another class.
+### Important points
 
-**Example:**
+- Hides implementation details.
+- Exposes essential functionality.
+- Python supports abstraction through the `abc` module.
+
+---
+
+## 9.3 Inheritance
+
+**Definition:** Inheritance allows one class to acquire attributes and methods from another class.
+
+The existing class is called the parent class or base class.
+
+The class that inherits is called the child class or derived class.
+
+### Real-world example
+
+A parent class called `Vehicle` can contain common properties and methods.
+
+Classes such as `Car` and `Bike` can inherit from `Vehicle`.
+
+### Python example
 
 ```python
 class Vehicle:
@@ -833,45 +685,46 @@ car.start()
 car.drive()
 ```
 
-**Output:**
+Output:
 
 ```text
 Vehicle is starting
 Car is driving
 ```
 
+Explanation:
+
+- `Vehicle` is the parent class.
+- `Car` is the child class.
+- `Car` inherits the `start()` method.
+- `Car` also defines its own `drive()` method.
+
 ### Types of inheritance
 
-**1. Single inheritance**
+**1. Single Inheritance**
 
 One child class inherits from one parent class.
 
 ```python
-class Parent:
-    def display(self):
-        print("Parent class")
-
-
-class Child(Parent):
+class A:
     pass
 
-
-obj = Child()
-obj.display()
+class B(A):
+    pass
 ```
 
-**2. Multiple inheritance**
+**2. Multiple Inheritance**
 
 One child class inherits from multiple parent classes.
 
 ```python
 class Father:
-    def skills(self):
+    def skill1(self):
         print("Gardening")
 
 
 class Mother:
-    def talent(self):
+    def skill2(self):
         print("Cooking")
 
 
@@ -879,47 +732,35 @@ class Child(Father, Mother):
     pass
 
 
-obj = Child()
-
-obj.skills()
-obj.talent()
+child = Child()
+child.skill1()
+child.skill2()
 ```
 
-**3. Multilevel inheritance**
+**3. Multilevel Inheritance**
 
-A class inherits from a class that already inherits from another class.
+A class inherits from another child class, forming multiple levels.
 
 ```python
-class Grandparent:
-    def display1(self):
-        print("Grandparent")
+class A:
+    pass
 
 
-class Parent(Grandparent):
-    def display2(self):
-        print("Parent")
+class B(A):
+    pass
 
 
-class Child(Parent):
-    def display3(self):
-        print("Child")
-
-
-obj = Child()
-
-obj.display1()
-obj.display2()
-obj.display3()
+class C(B):
+    pass
 ```
 
-**4. Hierarchical inheritance**
+**4. Hierarchical Inheritance**
 
 Multiple child classes inherit from one parent class.
 
 ```python
 class Vehicle:
-    def start(self):
-        print("Vehicle starting")
+    pass
 
 
 class Car(Vehicle):
@@ -928,24 +769,31 @@ class Car(Vehicle):
 
 class Bike(Vehicle):
     pass
-
-
-car = Car()
-bike = Bike()
-
-car.start()
-bike.start()
 ```
 
-**5. Hybrid inheritance**
+**5. Hybrid Inheritance**
 
-Hybrid inheritance combines two or more inheritance structures.
+A combination of two or more inheritance types.
 
-### 6.4 Polymorphism
+---
 
-Polymorphism means many forms.
+## 9.4 Polymorphism
 
-It allows the same method or interface to behave differently for different objects.
+**Definition:** Polymorphism means one interface or method name can have different behaviours depending on the object using it.
+
+The word polymorphism means "many forms".
+
+### Real-world example
+
+Different animals make different sounds:
+
+- Dog barks.
+- Cat meows.
+- Cow moos.
+
+The action is the same, but the behaviour is different.
+
+### Python example
 
 ```python
 class Animal:
@@ -970,25 +818,54 @@ dog.sound()
 cat.sound()
 ```
 
-**Output:**
+Output:
 
 ```text
 Dog barks
 Cat meows
 ```
 
-**Important concepts:**
-- Same method name.
-- Different implementations.
-- Method overriding is a common example.
+Explanation:
+
+- Both classes have a method named `sound()`.
+- Each class provides a different implementation.
+- This is method overriding.
+
+### Important points
+
+- Polymorphism means many forms.
+- The same interface can produce different behaviours.
+- Method overriding is a common example of runtime polymorphism in Python.
 
 ---
 
-## 7. Types of Methods in Python
+## 10. Difference Between the Four Pillars
 
-### Instance Method
+| Pillar | Meaning | Example |
+|---|---|---|
+| Encapsulation | Combine data and methods; control access | Bank account |
+| Abstraction | Hide implementation details | Driving a car |
+| Inheritance | Reuse features from another class | Car inherits Vehicle |
+| Polymorphism | Same interface, different behaviours | Dog and Cat sound |
 
-Uses `self` and works with object data.
+### Easy way to remember
+
+- Encapsulation – Protect data.
+- Abstraction – Hide complexity.
+- Inheritance – Reuse code.
+- Polymorphism – Different behaviours.
+
+---
+
+## 11. Types of Methods in Python
+
+Python classes commonly use three kinds of methods.
+
+### 11.1 Instance Method
+
+An instance method works with an individual object's data.
+
+It takes `self` as its first parameter.
 
 ```python
 class Student:
@@ -1003,9 +880,11 @@ student = Student("Chethan")
 student.display()
 ```
 
-### Class Method
+### 11.2 Class Method
 
-Uses `cls` and works with class-level data.
+A class method works with class-level data.
+
+It uses the `@classmethod` decorator and takes `cls` as its first parameter.
 
 ```python
 class Student:
@@ -1019,9 +898,17 @@ class Student:
 Student.show_college()
 ```
 
-### Static Method
+Output:
 
-Does not automatically receive `self` or `cls`.
+```text
+SJCE Mysore
+```
+
+### 11.3 Static Method
+
+A static method does not automatically receive `self` or `cls`.
+
+It uses the `@staticmethod` decorator.
 
 ```python
 class Calculator:
@@ -1034,62 +921,56 @@ class Calculator:
 print(Calculator.add(10, 20))
 ```
 
-**Output:**
+Output:
 
 ```text
 30
 ```
 
+### Difference Between Method Types
+
+| Method | First Parameter | Decorator | Main Use |
+|---|---|---|---|
+| Instance method | `self` | None | Object data |
+| Class method | `cls` | `@classmethod` | Class data |
+| Static method | No automatic parameter | `@staticmethod` | Related utility operation |
+
 ---
 
-## 8. Access Modifiers in Python
+## 12. Class vs Object
 
-Python uses naming conventions to indicate intended access.
-
-| Type | Example | Meaning |
-|---|---|---|
-| Public | `name` | General access |
-| Protected | `_name` | Intended for internal or subclass use |
-| Private | `__name` | Name mangling to avoid accidental access |
+| Class | Object |
+|---|---|
+| Blueprint or template | Instance of a class |
+| Defines attributes and methods | Uses attributes and methods |
+| One class can create many objects | Each object has its own identity |
+| Example: Car | Example: BMW car object |
 
 Example:
 
 ```python
-class Employee:
-    def __init__(self):
-        self.name = "Chethan"
-        self._department = "IT"
-        self.__salary = 30000
+class Car:
+    pass
 
 
-employee = Employee()
-
-print(employee.name)
-print(employee._department)
+car1 = Car()
+car2 = Car()
 ```
 
-The double-underscore attribute is name-mangled. It is not completely inaccessible, but direct access using its original name is not available in the usual way.
+Here, `Car` is the class, while `car1` and `car2` are separate objects.
 
 ---
 
-## 9. Difference Between Abstraction and Encapsulation
+# 13. OOP in OptimalTaskPlanner
 
-| Abstraction | Encapsulation |
-|---|---|
-| Hides implementation details | Combines data and methods |
-| Focuses on essential functionality | Focuses on controlling data access |
-| Uses abstract classes and interfaces | Uses classes, methods and access conventions |
-| Example: Car controls | Example: Bank account balance |
+OptimalTaskPlanner is a production task scheduling application.
 
----
+OOP helps organize its real-world components.
 
-## 10. OOP in OptimalTaskPlanner
+### 13.1 Machine Class
 
-OOP is useful in your manufacturing scheduling project because the project contains real-world entities.
+A machine can contain:
 
-### Machine class
-
-Stores:
 - Machine ID
 - Machine name
 - Capacity
@@ -1111,9 +992,10 @@ machine1 = Machine(1, "CNC Machine", 8)
 machine1.display()
 ```
 
-### Task class
+### 13.2 Task Class
 
-Stores:
+A task can contain:
+
 - Task ID
 - Task name
 - Processing time
@@ -1136,9 +1018,9 @@ task1 = Task(101, "Cutting", 3, "High")
 task1.display()
 ```
 
-### Schedule class
+### 13.3 Schedule Class
 
-Manages tasks.
+A schedule manages tasks assigned to machines.
 
 ```python
 class Schedule:
@@ -1164,199 +1046,94 @@ schedule.add_task(task2)
 schedule.show_tasks()
 ```
 
-**Output:**
+Output:
 
 ```text
 Cutting
 Drilling
 ```
 
-### Benefits in the project
+### Why use OOP in this project?
 
-1. Separate responsibilities for machines, tasks and schedules.
-2. Easier testing and debugging.
-3. Better code organization.
-4. Reusable components.
-5. Easier to add new scheduling features.
-
----
-
-# PART 3: PRACTICE PROGRAMS
-
-## Program 1 – Student Class
-
-**Task:** Create a Student class with name, USN and marks. Create two objects and display their details.
-
-```python
-class Student:
-    def __init__(self, name, usn, marks):
-        self.name = name
-        self.usn = usn
-        self.marks = marks
-
-    def display(self):
-        print("Name:", self.name)
-        print("USN:", self.usn)
-        print("Marks:", self.marks)
-
-
-student1 = Student("Chethan", "ISE101", 85)
-student2 = Student("Rahul", "ISE102", 90)
-
-student1.display()
-student2.display()
-```
-
-## Program 2 – Calculator Class
-
-**Task:** Create a calculator class with addition, subtraction, multiplication and division.
-
-```python
-class Calculator:
-
-    def add(self, a, b):
-        return a + b
-
-    def subtract(self, a, b):
-        return a - b
-
-    def multiply(self, a, b):
-        return a * b
-
-    def divide(self, a, b):
-        if b == 0:
-            return "Cannot divide by zero"
-        return a / b
-
-
-calc = Calculator()
-
-print(calc.add(10, 5))
-print(calc.subtract(10, 5))
-print(calc.multiply(10, 5))
-print(calc.divide(10, 5))
-```
-
-## Program 3 – Inheritance
-
-**Task:** Create a Vehicle parent class and a Bike child class.
-
-```python
-class Vehicle:
-    def start(self):
-        print("Vehicle started")
-
-
-class Bike(Vehicle):
-    def ride(self):
-        print("Bike is riding")
-
-
-bike = Bike()
-
-bike.start()
-bike.ride()
-```
-
-## Program 4 – Polymorphism
-
-**Task:** Create Animal, Dog and Cat classes with different sound methods.
-
-```python
-class Animal:
-    def sound(self):
-        print("Animal sound")
-
-
-class Dog(Animal):
-    def sound(self):
-        print("Bark")
-
-
-class Cat(Animal):
-    def sound(self):
-        print("Meow")
-
-
-dog = Dog()
-cat = Cat()
-
-dog.sound()
-cat.sound()
-```
-
-## Program 5 – Bank Account
-
-**Task:** Create a bank account with deposit, withdrawal and balance checking.
-
-```python
-class BankAccount:
-    def __init__(self, balance):
-        self.__balance = balance
-
-    def deposit(self, amount):
-        if amount > 0:
-            self.__balance += amount
-        else:
-            print("Invalid deposit")
-
-    def withdraw(self, amount):
-        if amount <= 0:
-            print("Invalid withdrawal")
-        elif amount > self.__balance:
-            print("Insufficient balance")
-        else:
-            self.__balance -= amount
-
-    def get_balance(self):
-        return self.__balance
-
-
-account = BankAccount(5000)
-
-account.deposit(1000)
-account.withdraw(2000)
-
-print("Balance:", account.get_balance())
-```
-
-**Output:**
-
-```text
-Balance: 4000
-```
+1. Machine, Task and Schedule are natural real-world entities.
+2. Each class has its own responsibility.
+3. Code can be reused and maintained easily.
+4. New features can be added without putting everything into one large program.
+5. It helps organize a growing backend application.
 
 ---
 
-# PART 4: QUICK REVISION
+# 14. Practice Programs
 
-## Important Definitions
+Complete these programs independently.
 
-| Concept | Definition |
-|---|---|
-| OOP | Programming paradigm based on classes and objects |
-| Class | Blueprint used to create objects |
-| Object | Instance of a class |
-| Constructor | Initializer used to set up object data |
-| `self` | Reference to the current object |
-| Attribute | Data associated with a class or object |
-| Method | Function defined inside a class |
-| Encapsulation | Combining data and methods and controlling access |
-| Abstraction | Hiding implementation details |
-| Inheritance | Reusing features from another class |
-| Polymorphism | Same interface with different behaviours |
-| Overriding | Redefining a parent method in a child class |
+### Program 1 – Student Class
 
-## Four Pillars – One-Line Revision
+Create a `Student` class with:
 
-- Encapsulation – Protect and control access to data.
-- Abstraction – Hide internal complexity.
-- Inheritance – Reuse existing code.
-- Polymorphism – Same interface, different behaviour.
+- Name
+- USN
+- Marks
 
-## Day 6 CS Fundamentals Checklist
+Create two objects and display their information.
 
-- [ ] Understand OOP.
+### Program 2 – Calculator Class
+
+Create a `Calculator` class with methods:
+
+- `add()`
+- `subtract()`
+- `multiply()`
+- `divide()`
+
+### Program 3 – Inheritance
+
+Create a parent class `Vehicle` with a `start()` method.
+
+Create a child class `Bike` with a `ride()` method.
+
+### Program 4 – Polymorphism
+
+Create a parent class `Animal` and child classes `Dog` and `Cat`.
+
+Implement the same `sound()` method differently.
+
+### Program 5 – Bank Account
+
+Create a `BankAccount` class with:
+
+- Private balance attribute using `__balance`.
+- `deposit()` method.
+- `withdraw()` method.
+- `get_balance()` method.
+
+Validate that deposits and withdrawals use positive amounts and that withdrawals do not exceed the balance.
+
+---
+
+# 15. Important Revision Questions
+
+1. What is OOP?
+2. What are the advantages of OOP?
+3. What is a class?
+4. What is an object?
+5. What is a constructor?
+6. What is `self`?
+7. What are attributes and methods?
+8. Explain the four pillars of OOP.
+9. What is the difference between encapsulation and abstraction?
+10. What is inheritance?
+11. Explain the five types of inheritance.
+12. What is polymorphism?
+13. What is method overriding?
+14. Explain instance, class and static methods.
+15. How can OOP help in a production scheduling application?
+
+---
+
+# 16. Day 6 – CS Fundamentals Completion Checklist
+
+- [ ] Understand what OOP means.
 - [ ] Understand class and object.
 - [ ] Understand `__init__()`.
 - [ ] Understand `self`.
@@ -1365,38 +1142,46 @@ Balance: 4000
 - [ ] Learn abstraction.
 - [ ] Learn inheritance.
 - [ ] Learn polymorphism.
-- [ ] Understand types of inheritance.
+- [ ] Understand the difference between the four pillars.
 - [ ] Understand instance, class and static methods.
-- [ ] Understand access conventions.
+- [ ] Explain how OOP is useful in OptimalTaskPlanner.
 - [ ] Complete at least two practice programs.
-- [ ] Prepare answers for interview questions.
-- [ ] Explain how OOP applies to OptimalTaskPlanner.
+- [ ] Answer interview questions aloud.
 
 ---
 
-# PART 5: FINAL SELF-ASSESSMENT
+# 17. Final Quick Revision
 
-Before marking this topic complete, make sure you can answer these questions without looking at the notes.
+| Concept | Remember |
+|---|---|
+| OOP | Programming using classes and objects |
+| Class | Blueprint |
+| Object | Instance of a class |
+| `__init__()` | Initializes object data |
+| `self` | Current object |
+| Attribute | Object or class data |
+| Method | Function inside a class |
+| Encapsulation | Combine data and methods; control access |
+| Abstraction | Hide implementation details |
+| Inheritance | Reuse features from a parent class |
+| Polymorphism | Same interface, different behaviours |
 
-1. What is OOP?
-2. What is the difference between a class and an object?
-3. What is the purpose of `__init__()`?
-4. What is `self`?
-5. Explain all four pillars of OOP.
-6. What is the difference between abstraction and encapsulation?
-7. Explain inheritance and its types.
-8. What is method overriding?
-9. What is the difference between instance, class and static methods?
-10. How can OOP help in a manufacturing scheduling application?
+**Day 6 Learning Outcome:**
 
-**Expected learning outcome:**
+You should be able to explain OOP in an interview, create classes and objects in Python, understand its four pillars, write basic OOP programs and explain how classes such as `Machine`, `Task` and `Schedule` can organize your OptimalTaskPlanner project.
 
-You should be able to create Python classes and objects, explain the four pillars of OOP, write basic inheritance and polymorphism programs, and confidently answer common fresher interview questions about OOP.
+---
 
-**GitHub commit message:**
+## GitHub Commit
+
+Save this file as:
+
+`week01/day06_oop_fundamentals.md`
+
+Run these commands from your repository root:
 
 ```bash
 git add week01/day06_oop_fundamentals.md
-git commit -m "Add OOP fundamentals and interview preparation notes"
+git commit -m "Add Day 6 OOP fundamentals interview and study notes"
 git push
 ```
