@@ -1,116 +1,102 @@
-DAY 7 – SQL NOTES
 
-Topic: PRIMARY KEY and FOREIGN KEY
+# Day 7 – SQL Notes: PRIMARY KEY and FOREIGN KEY
 
-1. What is SQL?
+**Week:** 1  
+**Topic:** SQL Database Fundamentals  
+**Database:** SQLite  
+**Project:** OptimalTaskPlanner
+
+---
+
+## 1. What is SQL?
 
 SQL stands for Structured Query Language.
 
-SQL is used to communicate with relational databases.
+It is used to communicate with relational databases.
 
 We use SQL to:
-
-- Create tables.
-- Insert data.
-- Read data.
-- Update data.
-- Delete data.
+- Create database tables.
+- Insert records.
+- Retrieve data.
+- Update existing records.
+- Delete records.
 - Connect multiple tables.
+- Maintain data integrity.
 
 Example:
 
+```sql
 SELECT * FROM machines;
-
-This retrieves all records from the machines table.
-
----
-
-2. What is a Database?
-
-A database is an organized collection of data.
-
-Example: A factory database may contain:
-
-- Machines
-- Tasks
-- Employees
-- Production records
-
-3. What is a Table?
-
-A table stores data in rows and columns.
-
-Example: machines table
-
-id| name
-1| CNC Machine
-2| Lathe Machine
-3| Drilling Machine
-
-- Column: A field in a table.
-- Row: One complete record.
-- Cell: One individual value.
+```
 
 ---
 
-4. What is a PRIMARY KEY?
+## 2. What is a PRIMARY KEY?
 
-A PRIMARY KEY uniquely identifies each row in a table.
+A PRIMARY KEY uniquely identifies each row in a database table.
 
-Example:
+### Rules
 
+1. Must contain unique values.
+2. Cannot contain NULL.
+3. A table can have only one PRIMARY KEY constraint.
+4. It can consist of multiple columns (composite primary key).
+
+### Example
+
+```sql
 CREATE TABLE machines (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100)
 );
+```
 
-Here, "id" is the PRIMARY KEY.
+Here, `id` is the PRIMARY KEY.
 
-Rules:
+### Insert records
 
-1. A primary key cannot contain duplicate values.
-2. A primary key cannot contain NULL.
-3. A table can have only one primary key constraint.
-4. A primary key can consist of one or multiple columns (composite primary key).
-
-Example:
-
+```sql
 INSERT INTO machines VALUES (1, 'CNC Machine');
 INSERT INTO machines VALUES (2, 'Lathe Machine');
+INSERT INTO machines VALUES (3, 'Drilling Machine');
+```
 
-The following is invalid because ID 1 already exists:
+Trying to insert another record with ID 1 will fail because the ID already exists.
 
-INSERT INTO machines VALUES (1, 'Drilling Machine');
+---
 
-5. What is a FOREIGN KEY?
+## 3. What is a FOREIGN KEY?
 
-A FOREIGN KEY connects two tables.
+A FOREIGN KEY is a column or group of columns that references a key in another table.
 
-It references a PRIMARY KEY or another eligible unique key in the parent table.
+It establishes relationships between tables and maintains referential integrity.
 
-Example:
+### Example
 
-Parent table: machines
+**machines table**
 
-id| name
-1| CNC Machine
-2| Lathe Machine
-3| Drilling Machine
+| id | name |
+|---|---|
+| 1 | CNC Machine |
+| 2 | Lathe Machine |
+| 3 | Drilling Machine |
 
-Child table: tasks
+**tasks table**
 
-id| name| machine_id
-1| Cutting| 1
-2| Turning| 2
-3| Drilling| 3
+| id | name | machine_id |
+|---|---|---|
+| 1 | Cutting | 1 |
+| 2 | Turning | 2 |
+| 3 | Drilling | 3 |
 
 Here:
+- `machines.id` is the PRIMARY KEY.
+- `tasks.machine_id` is the FOREIGN KEY.
+- `machine_id` references `machines.id`.
 
-- "machines.id" is the PRIMARY KEY.
-- "tasks.machine_id" is the FOREIGN KEY.
+### SQL code
 
-SQL:
-
+```sql
 CREATE TABLE tasks (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100),
@@ -118,43 +104,55 @@ CREATE TABLE tasks (
     FOREIGN KEY (machine_id)
         REFERENCES machines(id)
 );
+```
 
-Rules:
+### What does a FOREIGN KEY prevent?
 
-1. A foreign key must reference an existing key value in the parent table.
-2. A foreign key can contain duplicate values.
-3. A foreign key can contain NULL unless NOT NULL is specified.
-4. A table can have multiple foreign keys.
-5. Foreign keys maintain referential integrity.
+```sql
+INSERT INTO tasks (id, name, machine_id)
+VALUES (4, 'Welding', 99);
+```
 
-Important: SQLite requires foreign-key enforcement to be enabled using:
+This insertion fails because machine ID 99 does not exist, provided foreign-key enforcement is enabled.
 
+A FOREIGN KEY prevents invalid references to parent records.
+
+A FOREIGN KEY can contain NULL unless NOT NULL is specified.
+
+---
+
+## 4. PRIMARY KEY vs FOREIGN KEY
+
+| PRIMARY KEY | FOREIGN KEY |
+|---|---|
+| Uniquely identifies a row | References a key in another table |
+| Cannot contain NULL | Can contain NULL unless NOT NULL |
+| Must be unique | Values can repeat |
+| One PRIMARY KEY constraint per table | Multiple FOREIGN KEY constraints allowed |
+| Identifies records | Connects related records |
+
+---
+
+## 5. Complete Database Implementation
+
+First, enable foreign-key enforcement in SQLite.
+
+```sql
 PRAGMA foreign_keys = ON;
+```
 
----
+### Create machines table
 
-6. Difference Between PRIMARY KEY and FOREIGN KEY
-
-PRIMARY KEY| FOREIGN KEY
-Uniquely identifies a row| Connects tables
-Cannot contain NULL| Can contain NULL by default
-Cannot contain duplicates| Can contain duplicates
-One primary key constraint per table| Multiple foreign keys allowed
-Identifies records| Maintains relationships
-
----
-
-7. Complete SQL Implementation
-
-Create machines table:
-
+```sql
 CREATE TABLE machines (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100) NOT NULL
 );
+```
 
-Create tasks table:
+### Create tasks table
 
+```sql
 CREATE TABLE tasks (
     id INTEGER PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -162,53 +160,72 @@ CREATE TABLE tasks (
     FOREIGN KEY (machine_id)
         REFERENCES machines(id)
 );
+```
 
-Insert machines:
+### Insert machines
 
-INSERT INTO machines VALUES (1, 'CNC Machine');
-INSERT INTO machines VALUES (2, 'Lathe Machine');
-INSERT INTO machines VALUES (3, 'Drilling Machine');
+```sql
+INSERT INTO machines (id, name)
+VALUES
+(1, 'CNC Machine'),
+(2, 'Lathe Machine'),
+(3, 'Drilling Machine');
+```
 
-Insert tasks:
+### Insert tasks
 
-INSERT INTO tasks VALUES (1, 'Cutting', 1);
-INSERT INTO tasks VALUES (2, 'Turning', 2);
-INSERT INTO tasks VALUES (3, 'Drilling', 3);
+```sql
+INSERT INTO tasks (id, name, machine_id)
+VALUES
+(1, 'Cutting', 1),
+(2, 'Turning', 2),
+(3, 'Drilling', 3);
+```
 
 ---
 
-8. Important SQL Queries
+## 6. SQL Queries
 
-Query 1: Display all machines.
+### Query 1: Display all machines
 
+```sql
 SELECT * FROM machines;
+```
 
-Query 2: Display all tasks.
+### Query 2: Display all tasks
 
+```sql
 SELECT * FROM tasks;
+```
 
-Query 3: Find a particular machine.
+### Query 3: Connect two tables using JOIN
 
-SELECT * FROM machines
-WHERE id = 1;
-
-Query 4: Connect machines and tasks using JOIN.
-
+```sql
 SELECT
-    tasks.name,
+    tasks.id,
+    tasks.name AS task_name,
     machines.name AS machine_name
 FROM tasks
 JOIN machines
 ON tasks.machine_id = machines.id;
+```
 
-Query 5: Find tasks assigned to CNC Machine.
+**Explanation:**
+- JOIN combines related records.
+- ON specifies the matching condition.
+- `tasks.machine_id` matches `machines.id`.
 
+### Query 4: Find tasks assigned to CNC Machine
+
+```sql
 SELECT *
 FROM tasks
 WHERE machine_id = 1;
+```
 
-Query 6: Count tasks per machine.
+### Query 5: Count tasks per machine
 
+```sql
 SELECT
     machines.name,
     COUNT(tasks.id) AS total_tasks
@@ -216,118 +233,208 @@ FROM machines
 LEFT JOIN tasks
 ON machines.id = tasks.machine_id
 GROUP BY machines.id, machines.name;
+```
+
+**Explanation:**
+- LEFT JOIN returns all machines, including those without tasks.
+- COUNT calculates the number of tasks.
+- GROUP BY groups tasks by machine.
 
 ---
 
-9. What is a JOIN?
+## 7. Important SQL Commands
 
-JOIN is used to retrieve related data from multiple tables.
+### CREATE
 
-Common JOIN types:
+Creates a table.
 
-1. INNER JOIN – Returns matching records from both tables.
-2. LEFT JOIN – Returns all records from the left table and matching records from the right table.
-3. RIGHT JOIN – Returns all records from the right table and matching records from the left table.
-4. FULL OUTER JOIN – Returns matching and non-matching records from both tables.
+```sql
+CREATE TABLE students (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(100)
+);
+```
 
-Example:
+### INSERT
 
+Adds new records.
+
+```sql
+INSERT INTO students (id, name)
+VALUES (1, 'Rahul');
+```
+
+### SELECT
+
+Retrieves records.
+
+```sql
+SELECT * FROM students;
+```
+
+### WHERE
+
+Filters records.
+
+```sql
+SELECT *
+FROM students
+WHERE id = 1;
+```
+
+### UPDATE
+
+Modifies existing records.
+
+```sql
+UPDATE students
+SET name = 'Arun'
+WHERE id = 1;
+```
+
+### DELETE
+
+Deletes records.
+
+```sql
+DELETE FROM students
+WHERE id = 1;
+```
+
+### JOIN
+
+Retrieves related information from multiple tables.
+
+```sql
 SELECT *
 FROM tasks
-INNER JOIN machines
+JOIN machines
 ON tasks.machine_id = machines.id;
+```
 
 ---
 
-10. What is Referential Integrity?
+## 8. What is Referential Integrity?
 
 Referential integrity ensures that relationships between database tables remain valid.
 
 Example:
 
-Machine IDs available:
-1, 2, 3.
+A task cannot reference machine ID 99 if machine ID 99 does not exist.
 
-This is valid:
+This is enforced using a FOREIGN KEY constraint.
 
-INSERT INTO tasks VALUES (4, 'Welding', 2);
-
-This is invalid:
-
-INSERT INTO tasks VALUES (5, 'Painting', 99);
-
-Why?
-
-Machine ID 99 does not exist in the machines table.
-
-The FOREIGN KEY constraint rejects the invalid insertion when enforcement is enabled.
+It prevents invalid relationships and maintains consistent database records.
 
 ---
 
-11. Important Interview Questions
+## 9. Real-World Example: OptimalTaskPlanner
 
-Q1. What is SQL?
-Answer: SQL is a language used to communicate with relational databases.
+In my OptimalTaskPlanner project:
 
-Q2. What is a PRIMARY KEY?
-Answer: A primary key uniquely identifies each record in a table.
+- A machine can have multiple tasks.
+- Every task can be assigned to a machine.
+- Each machine has a unique ID.
+- Each task has its own unique ID.
+- The task's `machine_id` references the machines table.
 
-Q3. What is a FOREIGN KEY?
-Answer: A foreign key creates a relationship between two tables and maintains referential integrity.
+This represents a ONE-TO-MANY relationship.
 
-Q4. Can a PRIMARY KEY contain duplicate values?
-Answer: No.
+**Relationship:**
 
-Q5. Can a FOREIGN KEY contain duplicate values?
-Answer: Yes.
+One Machine → Many Tasks
 
-Q6. Can a FOREIGN KEY contain NULL?
-Answer: Yes, unless NOT NULL is specified.
+Example:
 
-Q7. What happens if we insert an invalid FOREIGN KEY?
-Answer: The database rejects the insertion when foreign-key enforcement is enabled.
+CNC Machine:
+- Cutting
+- Drilling
+- Milling
 
-Q8. What is the difference between PRIMARY KEY and FOREIGN KEY?
-Answer: A primary key identifies records, while a foreign key connects tables.
-
-Q9. What is JOIN?
-Answer: JOIN retrieves related records from multiple tables.
-
-Q10. What is referential integrity?
-Answer: It ensures that foreign-key references remain valid.
+All these tasks can reference the same machine ID.
 
 ---
 
-12. Quick Revision
+## 10. Interview Questions and Answers
 
-PRIMARY KEY = Unique identification.
+**Q1. What is a PRIMARY KEY?**
 
-FOREIGN KEY = Relationship between tables.
+A PRIMARY KEY uniquely identifies each row in a database table. It cannot contain NULL or duplicate values.
 
-JOIN = Retrieve data from multiple tables.
+**Q2. What is a FOREIGN KEY?**
 
-NULL = Missing or unknown value.
+A FOREIGN KEY creates a relationship between tables by referencing a key in another table.
 
-UNIQUE = Prevents duplicate values.
+**Q3. Can a PRIMARY KEY contain duplicate values?**
 
-NOT NULL = Value is mandatory.
+No. Primary key values must be unique.
 
-WHERE = Filters records.
+**Q4. Can a FOREIGN KEY contain duplicate values?**
 
-GROUP BY = Groups records.
+Yes. Multiple records can reference the same parent record.
 
-COUNT() = Counts records.
+**Q5. Can a FOREIGN KEY contain NULL?**
 
-Day 7 SQL Learning Goal
+Yes, unless the column has a NOT NULL constraint.
 
-You should be able to:
+**Q6. What happens when we insert an invalid FOREIGN KEY value?**
 
-- Explain PRIMARY KEY.
-- Explain FOREIGN KEY.
-- Create related database tables.
-- Insert records into both tables.
-- Write SELECT queries.
-- Use JOIN.
-- Explain referential integrity.
+The database rejects the insertion when foreign-key enforcement is enabled.
 
-End of Day 7 SQL Notes.
+**Q7. What is JOIN?**
+
+JOIN combines related records from multiple tables based on a matching condition.
+
+**Q8. What is a ONE-TO-MANY relationship?**
+
+One record in a parent table can be associated with multiple records in a child table.
+
+Example: One machine can have multiple tasks.
+
+**Q9. What is the difference between DELETE and DROP?**
+
+- DELETE removes records from a table.
+- DROP removes the entire table structure and its data.
+
+**Q10. Why do we use a database?**
+
+To store, manage, retrieve and maintain application data efficiently.
+
+---
+
+## 11. Day 7 SQL Summary
+
+| Concept | What I learned |
+|---|---|
+| SQL | Communicating with relational databases |
+| PRIMARY KEY | Uniquely identifies records |
+| FOREIGN KEY | Connects related tables |
+| INSERT | Adds records |
+| SELECT | Retrieves records |
+| WHERE | Filters records |
+| UPDATE | Modifies records |
+| DELETE | Deletes records |
+| JOIN | Combines related tables |
+| GROUP BY | Groups records |
+| COUNT | Counts records |
+| Referential Integrity | Maintains valid relationships |
+
+---
+
+## 12. Completion Checklist
+
+- [x] Understand PRIMARY KEY.
+- [x] Understand FOREIGN KEY.
+- [x] Create machines table.
+- [x] Create tasks table.
+- [x] Insert three machines.
+- [x] Insert three tasks.
+- [x] Understand JOIN.
+- [x] Write five SQL queries.
+- [x] Answer three SQL checkpoint questions.
+
+**Day 7 SQL learning completed.**
+
+---
+
+*12-Week Job Preparation Plan | Python Backend Developer*
